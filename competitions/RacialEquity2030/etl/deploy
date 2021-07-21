@@ -88,6 +88,7 @@ if [ ! -d "${DATA_DIR}" ] ; then
   unzip -d $TMP_ATTACHMENTS_DIR "${DATA_DIR}/${FINALIST_ATTACHMENTS}"
   ls "$TMP_ATTACHMENTS_DIR/Finalist Attachments" | while read file ; do
     NUM=${file/_*/};
+    mkdir -p ${ATTACHMENTS_DIR}/$NUM/
     mv -v $TMP_ATTACHMENTS_DIR/*/$NUM*/* ${ATTACHMENTS_DIR}/$NUM/
   done
   rm -rf $TMP_ATTACHMENTS_DIR
